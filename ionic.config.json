@@ -1,0 +1,7 @@
+{
+  "name": "smartHotel",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

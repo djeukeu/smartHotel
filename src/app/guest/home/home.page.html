@@ -1,0 +1,79 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="ion-text-uppercase">Room {{number}} dashboard</ion-title>
+    <ion-buttons slot="end" (click)="onLogout()">
+      <ion-button>
+        <ion-icon slot="icon-only" src="../../assets/icon/log-out.svg"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <h1 class="welcome">welcome dear guest</h1>
+  <p class="ion-text-center ion-text-uppercase">{{name}}</p>
+  <div class="logo">
+    <ion-img src="../../assets/icon/logo.png"></ion-img>
+  </div>
+  <h3 class="ion-text-capitalize">room indicators</h3>
+  <div class="indicator">
+    <div (click)="doNotDisturb()" [ngClass]="{dnd: dnd}">
+      <ion-button fill="outline">
+        <ion-icon src="../../assets/icon/dnd.svg"></ion-icon>
+      </ion-button>
+      <p>DND</p>
+    </div>
+    <div (click)="cleanUp()" [ngClass]="{cleanup: cleanup}">
+      <ion-button fill="outline">
+        <ion-icon src="../../assets/icon/cleaning.svg"></ion-icon>
+      </ion-button>
+      <p>Clean Up</p>
+    </div>
+    <div (click)="emergency()" [ngClass]="{alert: alert}">
+      <ion-button fill="outline">
+        <ion-icon src="../../assets/icon/siren.svg"></ion-icon>
+      </ion-button>
+      <p>Emergency</p>
+    </div>
+  </div>
+  <h3  class="ion-text-capitalize">light scenes</h3>
+  <div class="light">
+    <div (click)="lightScenes('off')" [ngClass]="{'active': light === 'off'}">
+      <ion-button fill="outline">
+        <ion-icon src="../../assets/icon/bulb.svg"></ion-icon>
+      </ion-button>
+        <p>Light off</p>
+    </div>
+    <div (click)="lightScenes('bright')" [ngClass]="{'active': light === 'bright'}">
+      <ion-button fill="outline">
+        <ion-icon src="../../assets/icon/sun.svg"></ion-icon>
+      </ion-button>
+      <p>Bright</p>
+    </div>
+    <div  (click)="lightScenes('night')" [ngClass]="{'active': light === 'night'}">
+      <ion-button fill="outline">
+        <ion-icon src="../../assets/icon/moon.svg"></ion-icon>
+      </ion-button>
+      <p>Night</p>
+    </div>
+    <div  (click)="lightScenes('relax')" [ngClass]="{'active': light === 'relax'}">
+      <ion-button fill="outline">
+        <ion-icon src="../../assets/icon/relax.svg"></ion-icon>
+      </ion-button>
+      <p>Relax</p>
+    </div>
+    <div  (click)="lightScenes('read')" [ngClass]="{'active': light === 'read'}">
+      <ion-button fill="outline">
+        <ion-icon src="../../assets/icon/book.svg"></ion-icon>
+      </ion-button>
+      <p>Read</p>
+    </div>
+    <div  (click)="lightScenes('tv')" [ngClass]="{'active': light === 'tv'}">
+      <ion-button fill="outline">
+        <ion-icon src="../../assets/icon/tv.svg"></ion-icon>
+      </ion-button>
+      <p>TV</p>
+    </div>
+  </div>
+</ion-content>
+  

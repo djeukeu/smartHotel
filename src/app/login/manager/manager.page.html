@@ -1,0 +1,27 @@
+<ion-content>
+  <ion-text color="primary">
+    <h1 class="ion-text-uppercase ion-text-center">manager</h1>
+  </ion-text>
+  <form #managerForm="ngForm" (ngSubmit)="onSubmit(managerForm)">
+    <ion-list>
+      <ion-item>
+        <ion-label color="primary" position="floating">E-Mail</ion-label>
+        <ion-input color="dark" ngModel type="email" name="email" required email #managerEmail="ngModel"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="!managerEmail.valid && managerEmail.touched" lines="none">
+        <ion-label>Should enter a valid email!</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label color="primary" position="floating">Password</ion-label>
+        <ion-input color="dark" ngModel type="password" name="password" required minlength="8" #managerPass="ngModel"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="!managerPass.valid && managerPass.touched" lines="none">
+        <ion-label>Should atleast be 8 characters!</ion-label>
+      </ion-item>
+    </ion-list>
+      <ion-button type="button" fill="clear" color="secondary" expand="block" routerLink="/login/guest">
+        <p>Switch to guest</p>
+      </ion-button>
+      <ion-button expand="block" type="submit" [disabled]="!managerForm.valid">Sign in</ion-button>
+  </form>
+</ion-content>

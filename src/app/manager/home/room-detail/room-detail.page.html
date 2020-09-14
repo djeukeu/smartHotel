@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/manager/home" text=""></ion-back-button>
+    </ion-buttons>
+    <ion-title>Room {{loadedRoom.roomNumber}}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="deleteRoom()">
+        <ion-icon slot="icon-only" src="../../assets/icon/trash.svg"></ion-icon>
+      </ion-button>
+      <ion-button [routerLink]="['/manager/home/edit', loadedRoom.id]">
+        <ion-icon slot="icon-only" src="../../assets/icon/create-outline.svg"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid class="ion-no-padding">
+    <ion-row class="ion-no-padding">
+      <ion-col>
+        <ion-img [src]="loadedRoom.image" ></ion-img>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-list>
+          <ion-item>
+            <ion-label class="ion-text-capitalize">{{loadedRoom.type}}</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label class="ion-text-capitalize">{{loadedRoom.size}}</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label>{{loadedRoom.description}}</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label class="ion-text-capitalize">{{loadedRoom.status}}</ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

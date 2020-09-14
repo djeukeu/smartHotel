@@ -1,0 +1,124 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+@mixin box($height){
+    border-radius: 10px;
+    background: var(--ion-color-light);
+    box-shadow: 0 8px 15px var(--ion-color-medium);
+    height: $height;
+}
+
+@mixin flex{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: auto;
+    flex: 1;
+}
+
+@mixin text($color){
+    text-align: center;
+    font-size: 16px;
+    margin: auto;
+    color: $color;
+}
+
+.welcome{
+    text-align: center;
+    font-style: italic;
+    text-transform: capitalize;
+    color: var(--ion-color-dark);
+    margin: 5px;
+}
+
+.logo{
+    margin: 10px 5px;
+}
+
+h3{
+    padding: 5px;
+    margin: 20px 5px auto;
+    color: var(--ion-color-dark);
+}
+
+[button-ion]{
+    width: 75px;
+    height: 75px;
+    --border-radius: 50%;
+}
+
+.indicator{
+    @include box(20%);
+    @include flex;
+    div{
+        @include text(var(--ion-color-medium));
+        width: 33.333%;
+        ion-button{
+            @extend [button-ion];
+            --color: var(--ion-color-medium);
+            --border-color: var(--ion-color-medium);
+            --background-activated: transparent;
+        }
+    }
+    div.dnd{
+        @include text(var(--ion-color-primary));
+        width: 33.333%;
+        ion-button{
+            @extend [button-ion];
+            --color: var(--ion-color-primary);
+            --border-color: var(--ion-color-primary);
+            --background-activated: transparent;
+        }
+    }
+    div.alert{
+        @include text(var(--ion-color-danger));
+        width: 33.333%;
+        ion-button{
+            @extend [button-ion];
+            --color: var(--ion-color-danger);
+            --border-color: var(--ion-color-danger);
+            --background-activated: transparent;
+        }
+    }
+    div.cleanup{
+        @include text(var(--ion-color-secondary));
+        width: 33.333%;
+        ion-button{
+            @extend [button-ion];
+            --color: var(--ion-color-secondary);
+            --border-color: var(--ion-color-secondary);
+            --background-activated: transparent;
+        }
+    }
+}
+
+.light{
+    @include box(40%);
+    @include flex;
+    div{
+        @include text(var(--ion-color-medium));
+        width: 33.333%;
+        ion-button{
+            @extend [button-ion];
+            --color: var(--ion-color-medium);
+            --border-color: var(--ion-color-medium);
+            --background-activated: transparent;
+        }
+    }
+    div.active{
+        @include text(var(--ion-color-primary));
+        width: 33.333%;
+        ion-button{
+            @extend [button-ion];
+            --color: var(--ion-color-primary);
+            --border-color: var(--ion-color-primary);
+            --background-activated: transparent;
+        }
+    }
+    
+}

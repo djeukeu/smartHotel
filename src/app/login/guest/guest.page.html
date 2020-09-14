@@ -1,0 +1,34 @@
+<ion-content>
+  <ion-text color="primary">
+    <h1 class="ion-text-uppercase ion-text-center">guest</h1>
+  </ion-text>
+  <form #guestForm="ngForm" (ngSubmit)="onSubmit(guestForm)">
+    <ion-list>
+      <ion-item>
+        <ion-label color="primary" position="floating">Guest Name</ion-label>
+        <ion-input color="dark" type="text" name="guestName" ngModel required #guestName="ngModel"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="!guestName.valid && guestName.touched" lines="none">
+        <ion-label>Should enter a guest name</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label color="primary" position="floating">Room number</ion-label>
+        <ion-input color="dark" type="number" name="roomNumber" ngModel required #roomNum="ngModel"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="!roomNum.valid && roomNum.touched" lines="none">
+        <ion-label>Must enter the room number</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label color="primary" position="floating">Manager Authorization</ion-label>
+        <ion-input type="password" inputmode="numeric" name="password" ngModel required minlenght="4" maxlength="4" #pass="ngModel"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="!pass.valid && pass.touched" lines="none">
+        <ion-label>Enter the manager pass</ion-label>
+      </ion-item>
+    </ion-list>
+    <ion-button fill="clear" expand="block" color="secondary" routerLink="/login/manager">
+      <p>Switch to manager</p>
+    </ion-button>
+    <ion-button expand="block" type="submit" [disabled]="!guestForm.valid">Sign in</ion-button>
+  </form>
+</ion-content>

@@ -1,0 +1,60 @@
+@mixin box($height){
+    border-radius: 10px;
+    background: var(--ion-color-light);
+    box-shadow: 0 8px 15px var(--ion-color-medium);
+    height: $height;
+    margin-bottom: 25px;
+}
+
+@mixin button($width, $height){
+    width: $width;
+    height: $height;
+}
+
+.temperature{
+    @include box(30%);
+    #power{
+        @include button(75px, 75px);
+        --border-radius: 50%;
+    }
+    #up{
+        @include button(54px, 54px);
+        --border-radius: 50%;
+    }
+    #down{
+        @include button(54px, 54px);
+        --border-radius: 50%;
+    }
+    #temp{
+        font-size: 40px;
+    }
+}
+
+.mode{
+    @include box(20%);
+}
+
+p{
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    color: var(--ion-color-tertiary);
+    padding: 10px;
+}
+
+ion-chip{
+    ion-label{
+    padding: 5px;
+    font-size: 26px;
+    }
+    --background: var(--ion-color-light);
+    --color: var(--ion-color-primary);
+    border: 2px solid var(--ion-color-primary);
+    border-radius: 50px;
+}
+
+.fan{
+    @include box(20%);
+}
+
+

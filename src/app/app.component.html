@@ -1,0 +1,36 @@
+<ion-app mode="ios">
+  <ion-menu menu-id="managerMenu" side="start" content-id="manager">
+    <ion-header>
+      <ion-img src="../assets/images/makepe-palace.jpg" class="ion-padding-bottom"></ion-img>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+        <ion-menu-toggle>
+          <ion-item lines="none" routerLink="/manager/home" detail="false">
+            <ion-icon src="../../assets/icon/home.svg" slot="start" class="tertiary"></ion-icon>
+            <ion-label color="tertiary">Home</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle>
+          <ion-item lines="none" routerLink="/manager/notification" detail="false">
+            <ion-icon src="../../assets/icon/chatbubbles.svg" slot="start" class="tertiary"></ion-icon>
+            <ion-label color="tertiary">Discussion</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle>
+          <ion-item lines="none" routerLink="/manager/employee" detail="false">
+            <ion-icon src="../../assets/icon/people.svg" slot="start" class="tertiary"></ion-icon>
+            <ion-label color="tertiary">Employees</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle>
+          <ion-item lines="none" (click)="onLogout()">
+            <ion-icon src="../../assets/icon/log-out.svg" slot="start" class="tertiary"></ion-icon>
+            <ion-label color="tertiary">Logout</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  <ion-router-outlet id="manager"></ion-router-outlet>
+</ion-app>

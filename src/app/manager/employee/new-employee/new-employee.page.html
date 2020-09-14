@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/manager/employee" text=""></ion-back-button>
+    </ion-buttons>
+    <ion-title>New Employee</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <form [formGroup]="form">
+    <ion-list>
+      <ion-item>
+        <ion-label color="primary" position="floating">First Name</ion-label>
+        <ion-input color="dark" type="text" formControlName="firstName"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label color="primary" position="floating">Last Name</ion-label>
+        <ion-input color="dark" type="text" formControlName="lastName"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label color="primary" position="floating">Date of Birth</ion-label>
+        <ion-datetime color="dark" formControlName="dateOfBirth"></ion-datetime>
+      </ion-item>
+      <ion-item>
+        <ion-label color="primary" position="floating">E-mail</ion-label>
+        <ion-input color="dark" type="email" formControlName="email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label color="primary" position="floating">Phone Number</ion-label>
+        <ion-input color="dark" type="number" formControlName="phone"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label color="primary" position="floating">Status</ion-label>
+        <ion-input color="dark" type="text" formControlName="status"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label color="primary" position="floating">Image</ion-label>
+        <ion-input color="dark" type="file" formControlName="image"></ion-input>
+      </ion-item>
+    </ion-list>
+    <ion-item>
+      <ion-label color="primary" position="floating">Gender</ion-label>
+      <ion-select formControlName="gender">
+        <ion-select-option value="male">Male</ion-select-option>
+        <ion-select-option value="female">Female</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-button class="ion-margin-top" expand="block" (click)="onCreateEmployee()" [disabled]="!form.valid">
+      <p>Add</p>
+    </ion-button>
+  </form>
+</ion-content>
+

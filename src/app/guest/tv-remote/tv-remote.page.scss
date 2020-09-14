@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#power{
+    margin: 10px auto;
+    --border-radius: 5px;
+}
+
+ion-button, ion-icon{
+    --background: var(--ion-color-light);
+    --background-activated: var(--ion-color-primary);   
+    --color: var(--ion-color-tertiary);
+    --color-activated: white;
+}
+
+.container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: auto;
+    flex: 1;
+    height: 80%;
+
+    div{
+        width: 25%;
+        align-self: center;
+        ion-button{
+            width: 75px;
+            height: 75px;
+            --border-radius: 50%;
+            p{
+                font-size: 26px;
+                text-align: center;
+            }
+        }
+    }     
+}

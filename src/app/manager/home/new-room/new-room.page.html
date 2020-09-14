@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/manager/home" text=""></ion-back-button>
+    </ion-buttons>
+    <ion-title>New Room</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <form [formGroup]="form">
+    <ion-list>
+      <ion-item>
+        <ion-label color="primary" position="floating">Room Number</ion-label>
+        <ion-input color="dark" type="number" formControlName="number"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label color="primary" position="floating">Type</ion-label>
+        <ion-select formControlName="type">
+          <ion-select-option value="single">Single</ion-select-option>
+          <ion-select-option value="double">Double</ion-select-option>
+          <ion-select-option value="triple">Triple</ion-select-option>
+          <ion-select-option value="queen">Queen</ion-select-option>
+          <ion-select-option value="king">king</ion-select-option>
+          <ion-select-option value="double-double">Double Double</ion-select-option>
+        </ion-select> 
+      </ion-item>
+      <ion-item>
+        <ion-label color="primary" position="floating">Size</ion-label>
+        <ion-select formControlName="size">
+          <ion-select-option value="small">Small</ion-select-option>
+          <ion-select-option value="medium">Medium</ion-select-option>
+          <ion-select-option value="large">Large</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label color="primary" position="floating">Description</ion-label>
+        <ion-textarea rows="3" name="description" formControlName="description"></ion-textarea>
+      </ion-item>
+      <ion-item>
+        <ion-label color="primary" position="floating">Image</ion-label>
+        <ion-input color="dark" type="file" formControlName="image"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label color="primary" position="floating">Status</ion-label>
+        <ion-input color="dark" type="text" formControlName="status"></ion-input>
+      </ion-item>
+    </ion-list>
+    <ion-button class="ion-margin-top" expand="block" (click)="onCreateRoom()" [disabled]="!form.valid">
+      <p>Add</p>
+    </ion-button>
+  </form>
